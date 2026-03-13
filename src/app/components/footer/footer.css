@@ -1,0 +1,132 @@
+/* Contenedor principal del Footer */
+.main-footer {
+  background-color: #000000; /* Fondo negro puro */
+  color: #ffffff; /* Texto blanco */
+  padding: 4rem 5%; /* Espaciado interno: arriba/abajo y a los lados */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 0.9rem;
+}
+
+/* Sistema de 3 columnas */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr; /* La primera columna es un poco más ancha */
+  gap: 3rem; /* Espacio entre columnas */
+  max-width: 1200px;
+  margin: 0 auto; /* Centrar el contenido en pantallas muy grandes */
+}
+
+/* --- COLUMNA 1: MARCA Y CONTACTO --- */
+.footer-logo {
+  max-width: 240px;
+  margin-bottom: 5px;
+}
+
+.slogan {
+  color: #3498db; /* Azul brillante como en el diseño */
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+ul {
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.contact-list .icon {
+  font-size: 1.2rem;
+}
+
+/* Redes Sociales */
+.social-media {
+  margin-top: 2rem;
+}
+
+.social-media p {
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  /* Nota: Si tus iconos de redes son negros, esto los volverá blancos */
+  filter: brightness(0) invert(1); 
+}
+
+/* --- COLUMNA 2: LEGAL Y PAGOS --- */
+.legal-links li {
+  margin-bottom: 12px;
+}
+
+.legal-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.legal-links a:hover {
+  opacity: 1;
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+
+.payment-section {
+  margin-top: 3rem; /* Separación con la parte de temas legales */
+}
+
+/* --- COLUMNA 3 y LOGOS (Pagos/Asociados) --- */
+.experience-text {
+  font-style: italic; /* Texto en cursiva como en tu captura */
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.payment-logos, .partners-logos {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* Estilo para los logos de Visa, Vueling, etc. */
+.payment-logos img, .partners-logos img {
+  height: 35px;
+  background-color: #ffffff; /* Fondo blanco para que se vean bien sobre el negro */
+  padding: 5px 8px;
+  border-radius: 6px; /* Bordes redondeados */
+  object-fit: contain;
+}
+
+/* --- ADAPTACIÓN A MÓVILES --- */
+@media (max-width: 900px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* En pantallas pequeñas, todo se pone en 1 sola columna */
+    gap: 2rem;
+  }
+}

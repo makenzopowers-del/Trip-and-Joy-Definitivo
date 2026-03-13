@@ -1,0 +1,137 @@
+/* Contenedor que ocupa toda la pantalla con una imagen de fondo */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Cambia 'fondo-login.jpg' por una imagen real que tengas en tu carpeta assets */
+  background: url('/assets/fondo-login.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 20px;
+}
+
+/* Capa oscura superpuesta para que el cristal destaque más */
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Fondo negro al 40% de opacidad */
+}
+
+/* El panel de cristal */
+.glass-panel {
+  position: relative; /* Para que quede por encima de la capa oscura */
+  background: rgba(20, 30, 48, 0.6); /* Azul muy oscuro translúcido */
+  backdrop-filter: blur(12px); /* El desenfoque del fondo (la magia) */
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.auth-logo {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+
+.auth-header h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+  color: #00b4d8;
+}
+
+.auth-header p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Estilos del Formulario */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 15px;
+  opacity: 0.7;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 12px 12px 45px; /* Espacio extra a la izquierda para el icono */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #00b4d8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-top: 8px;
+  color: #00b4d8;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+/* Botón y Footer */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #00b4d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0096b4;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 0.9rem;
+}
+
+.auth-footer a {
+  color: #00b4d8;
+  text-decoration: none;
+  font-weight: bold;
+}

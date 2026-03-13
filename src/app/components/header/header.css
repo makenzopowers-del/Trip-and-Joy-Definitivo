@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(10, 15, 30, 0.9); /* Azul muy oscuro casi negro */
+  backdrop-filter: blur(10px); /* Efecto cristal de tus capturas */
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 300;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00b4d8; /* Un azul brillante para el hover */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ccc;
+  border-radius: 50%;
+  border: 2px solid #00b4d8;
+}
