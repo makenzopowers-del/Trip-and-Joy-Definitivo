@@ -1,6 +1,11 @@
 <link rel="stylesheet" href="./login.css">
-<div class="auth-container">
-  <div class="glass-panel">
+
+<div class="modal-overlay">
+  
+  <div class="glass-panel modal-box">
+    
+    <button class="close-btn" (click)="onCerrarClick()">X</button>
+
     <div class="auth-header">
       <img src="assets/logo-tripnjoy.png" alt="Trip N' Joy" class="auth-logo">
       <h2>Iniciar Sesión</h2>
@@ -11,7 +16,7 @@
       <div class="input-group">
         <label for="email">Correo electrónico</label>
         <div class="input-wrapper">
-          <i class="icon-mail">✉️</i>
+          <i class="icon-mail">✉</i>
           <input type="email" id="email" placeholder="viajero@ejemplo.com" required>
         </div>
       </div>
@@ -31,5 +36,5 @@
     <div class="auth-footer">
       <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
     </div>
-  </div>
+    </div>
 </div>

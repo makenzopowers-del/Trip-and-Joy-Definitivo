@@ -11,6 +11,38 @@
   padding: 20px;
 }
 
+/* Esto hace que el fondo se ponga oscuro y borroso por encima de la página */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); 
+  backdrop-filter: blur(5px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Necesitamos relative para poder colocar la X en la esquina */
+.modal-box {
+  position: relative; 
+}
+
+/* El estilo de la X para cerrar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  left: 15px; /* Según tu diseño, la X va a la izquierda */
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
 /* Capa oscura superpuesta para que el cristal destaque más */
 .auth-container::before {
   content: '';
