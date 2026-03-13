@@ -2,8 +2,7 @@
   position: relative;
   /* Altura total de la pantalla menos lo que ocupa el header (aprox 60px) */
   min-height: calc(100vh - 60px); 
-  /* Pon una foto de ciudad en tus assets y cambia este nombre */
-  background: url('/assets/fondo-ciudad.jpg') no-repeat center center;
+  background: url('/fondo-ciudad.jpg') no-repeat center center;
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -14,7 +13,7 @@
 .hero-overlay {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* Oscurece un 40% la foto para que se lea el texto */
+  background: rgba(0, 0, 0, 0.6); /* Oscurece un 40% la foto para que se lea el texto */
   z-index: 1;
 }
 
@@ -35,7 +34,7 @@ h1 {
 }
 
 h1 span {
-  color: #d39e72; /* El color cobrizo de la palabra PLANES */
+  color: #f0740f; /* El color cobrizo de la palabra PLANES */
   font-weight: 700; /* Texto grueso */
 }
 
