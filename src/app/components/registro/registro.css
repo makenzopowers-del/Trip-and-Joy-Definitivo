@@ -1,0 +1,124 @@
+/* Contenedor y fondo */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/assets/fondo-login.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding: 40px 20px; /* Un poco más de padding arriba y abajo porque el form es más alto */
+}
+
+.auth-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo negro al 50% */
+}
+
+/* Panel de Cristal */
+.glass-panel {
+  position: relative;
+  background: rgba(20, 30, 48, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px; /* Un poco más ancho que el login */
+  color: white;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.auth-header { text-align: center; margin-bottom: 25px; }
+.auth-logo { max-width: 140px; margin-bottom: 10px; }
+.auth-header h2 { font-size: 1.8rem; margin-bottom: 5px; color: #00b4d8; }
+.auth-header p { font-size: 0.9rem; opacity: 0.8; }
+
+/* Formulario */
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .input-group {
+  flex: 1; /* Hace que nombre y apellidos ocupen la mitad cada uno */
+}
+
+.input-group { margin-bottom: 18px; }
+.input-group label { display: block; margin-bottom: 6px; font-size: 0.85rem; font-weight: 500; }
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 12px;
+  opacity: 0.7;
+  font-style: normal;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: white;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+/* Si un input no tiene icono (como apellidos), quitamos el padding extra */
+.input-wrapper input:not(:focus):not(:placeholder-shown):valid,
+.input-wrapper input[id="apellidos"] {
+  padding-left: 15px; 
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  border-color: #00b4d8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Checkbox de términos */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: #00b4d8; /* Color azul para el check */
+}
+
+.checkbox-group a { color: #00b4d8; text-decoration: none; }
+.checkbox-group a:hover { text-decoration: underline; }
+
+/* Botón y Footer */
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  background: #00b4d8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover { background: #0096b4; }
+
+.auth-footer { text-align: center; margin-top: 20px; font-size: 0.9rem; }
+.auth-footer a { color: #00b4d8; text-decoration: none; font-weight: bold; }

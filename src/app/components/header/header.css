@@ -1,39 +1,66 @@
-.navbar {
+.main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
-  background: rgba(10, 15, 30, 0.9); /* Azul muy oscuro casi negro */
-  backdrop-filter: blur(10px); /* Efecto cristal de tus capturas */
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  background-color: #2c3e50; /* Azul grisáceo oscuro calcado de tu diseño */
+  padding: 10px 5%;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 10;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 300;
-  transition: 0.3s;
+.logo-img {
+  width: 40px; /* Ajusta según el tamaño de tu logo circular */
+  height: auto;
 }
 
-.nav-links a:hover {
-  color: #00b4d8; /* Un azul brillante para el hover */
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.user-profile {
+.nav-menu li {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
+  transition: color 0.3s;
+}
+
+.nav-menu li:hover {
+  color: #e0e0e0;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  transform: scaleX(1.2); /* Hace la 'v' un poco más ancha para simular la flecha */
+}
+
+.user-actions .join-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: bold;
   cursor: pointer;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  background: #ccc;
+.user-icon {
+  background-color: #d39e72; /* Color cobrizo */
   border-radius: 50%;
-  border: 2px solid #00b4d8;
+  padding: 5px;
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
 }
