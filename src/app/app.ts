@@ -15,4 +15,5 @@ import { Login } from './components/login/login';
 })
 export class App {
   title = 'tripandjoy2';
+  isLoginVisible: boolean = false;
 }

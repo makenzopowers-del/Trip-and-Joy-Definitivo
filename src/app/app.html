@@ -3,3 +3,7 @@
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>
+
+@if (isLoginVisible) {
+  <app-login (cerrarLogin)="isLoginVisible = false"></app-login>
+}
