@@ -1,1 +1,34 @@
-/* You can add global styles to this file, and also import other style files */
+/* 1. Importamos exactamente Overlock y Overlock SC desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Overlock+SC&family=Overlock:wght@400;700;900&display=swap');
+
+/* 2. Reseteo y fuente base para toda la web (Overlock normal) */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Overlock', sans-serif; /* Cálida, curva y fácil de leer */
+  background-color: #f4f7f6;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* 3. Forzamos Overlock en los textos de los formularios, enlaces y etiquetas */
+input, textarea, select, label, p, span, a {
+  font-family: 'Overlock', sans-serif;
+  font-size: 1rem; /* Aseguramos un buen tamaño base */
+}
+
+/* 4. Aplicamos Overlock SC (Versalitas) a los Títulos para que destaquen con estilo */
+h1, h2, h3, h4, h5, h6, .auth-title {
+  font-family: 'Overlock SC', sans-serif;
+  font-weight: 400; 
+  letter-spacing: 1px; /* Darle un pelín de espacio a las versalitas queda súper elegante */
+}
+
+/* 5. Ponemos Overlock SC también en los botones para darles más fuerza */
+button, .btn-primary, .btn-social {
+  font-family: 'Overlock SC', sans-serif;
+  letter-spacing: 0.5px;
+}

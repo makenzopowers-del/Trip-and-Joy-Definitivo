@@ -43,6 +43,11 @@ h1 span {
   margin-bottom: 40px;
 }
 
+.texto-naranja { /* O el nombre de la clase que le hayas puesto */
+  color: #ff7300; /* Tu color naranja */
+  font-size: inherit; /* <--- ESTO ES LA MAGIA */
+}
+
 .search-container {
   display: flex;
   align-items: center;
