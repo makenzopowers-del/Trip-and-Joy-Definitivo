@@ -27,7 +27,7 @@
   max-width: 450px; /* Ancho máximo para que no se estire en pantallas grandes */
   padding: 40px; /* Espacio interior */
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Sombra difuminada para dar volumen */
-  color: white; /* Texto principal en blanco */
+  color: rgb(0, 0, 0); /* Texto principal en blanco */
   font-family: Arial, sans-serif;
 }
 
@@ -89,7 +89,7 @@
 /* Etiquetas de los inputs (Correo electrónico, Contraseña) */
 .input-group label {
   display: block;
-  font-weight: bold;
+  font-weight: 800;
   margin-bottom: 5px;
   font-size: 13px;
   color: #00597f;
@@ -117,7 +117,7 @@
   flex: 1; /* Ocupa todo el espacio restante de la caja */
   background: transparent; /* Fondo transparente para que se vea el de la caja wrapper */
   border: none;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 12px;
   font-size: 14px;
   outline: none; /* Quita el borde azul que ponen los navegadores al hacer clic */

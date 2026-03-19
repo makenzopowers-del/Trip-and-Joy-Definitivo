@@ -11,18 +11,24 @@
   z-index: 10;
 }
 
+/* =========================================
+   ANIMACIÓN DEL LOGOTIPO
+   ========================================= */
 .logo-img {
-  width: 40px; /* Ajusta según el tamaño de tu logo circular */
-  height: auto;
+  height: 80px;
+  width: auto;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición con un efecto de rebote suave */
+  cursor: pointer;
 }
 
-.nav-menu ul {
-  display: flex;
-  list-style: none;
-  gap: 30px;
-  margin: 0;
-  padding: 0;
+.logo-img:hover {
+  transform: scale(1.0) rotate(-5deg); /* Crece un 10% y gira un poquito hacia la izquierda */
+  filter: drop-shadow(0 0 8px rgba(255, 161, 73, 0.678)); /* Le da un brillo sutil */
 }
+
+/* ============================
+   MENÚ DE NAVEGACIÓN
+   ============================ */
 
 .nav-menu li {
   font-size: 0.8rem;
@@ -30,9 +36,29 @@
   letter-spacing: 1px;
   cursor: pointer;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  list-style: none;      /* Quita los puntos de la lista */
+  margin: 0;
+  padding: 0;
   gap: 5px;
   transition: color 0.3s;
+}
+
+.nav-menu ul {
+  display: flex !important;      /* El !important fuerza a que se aplique sí o sí */
+  flex-direction: row;           /* Obliga a que los elementos vayan en una sola fila */
+  gap: 40px;                     /* Espacio de separación entre "Qué ofrecemos" y "Valoraciones" */
+  list-style-type: none;         /* Quita los puntos negros por defecto de la lista */
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-menu ul li {
+  display: flex;
+  align-items: center;
+  gap: 5px; /* Pequeño espacio entre tu flechita 'v' y el texto */
 }
 
 .nav-menu li:hover {
@@ -42,6 +68,31 @@
 .arrow {
   font-size: 0.7rem;
   transform: scaleX(1.2); /* Hace la 'v' un poco más ancha para simular la flecha */
+}
+
+/* =========================================
+   ESTILOS DEL BOTÓN "ÚNETE"
+   ========================================= */
+.join-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre el icono y el texto */
+  background-color: transparent; /* Fondo transparente por defecto */
+  color: #ffffff;
+  padding: 8px 24px;
+  border-radius: 500px; /* Bordes muy redondeados tipo píldora */
+  border: 2px solid #ffffff; /* Borde blanco */
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Para que el cambio de color sea suave */
+}
+
+.join-btn:hover {
+  background-color: #ffffff; /* Al pasar el ratón, el fondo se vuelve blanco */
+  color: #2b3a4a; /* El texto se vuelve del color oscuro de tu barra (ajústalo si es necesario) */
+  transform: translateY(-2px); /* Se levanta un poquito hacia arriba */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de profundidad */
 }
 
 .user-actions .join-btn {
@@ -63,4 +114,5 @@
   align-items: center;
   width: 25px;
   height: 25px;
+  font-size: 1.1rem;
 }

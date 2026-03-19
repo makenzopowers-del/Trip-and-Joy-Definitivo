@@ -57,6 +57,7 @@
   margin-bottom: 5px; 
   color: #00597f; /* Azul claro para el título */
   margin-top: 5px;
+  font-weight: 800;
 }
 
 .auth-header p { 

@@ -1,19 +1,24 @@
 <link rel="stylesheet" href="./header.css">
 <header class="main-header">
   <div class="logo-container">
-    <img src="logo-bola.png" alt="Logo" class="logo-img">
-  </div>
+    <a routerLink="/">
+      <img src="logo-bola.png" alt="Logo" class="logo-img">
+    </a>
+</div>
 
   <nav class="nav-menu">
     <ul>
-      <li><span class="arrow">v</span> ¿QUÉ OFRECEMOS?</li>
+      <li>
+        <span class="arrow">v</span> 
+        <a routerLink="/que-ofrecemos" style="text-decoration: none; color: inherit; cursor: pointer;">¿QUÉ OFRECEMOS?</a>
+      </li>
       <li><span class="arrow">v</span> VALORACIONES</li>
     </ul>
   </nav>
 
   <div class="user-actions">
     <div class="join-btn" (click)="onBotonUneteClick()" style="cursor: pointer;">
-      <span class="user-icon">👤</span> ÚNETE
+      ÚNETE
     </div>
   </div>
 </header>
