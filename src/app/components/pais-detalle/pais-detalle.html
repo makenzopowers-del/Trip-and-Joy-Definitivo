@@ -10,6 +10,26 @@
         <h1 class="titulo-pais">{{ pais.nombre }}</h1>
       </div>
 
+      @if (pais.eslogan) {
+        <p class="eslogan-pais">"{{ pais.eslogan }}"</p>
+      }
+
+      @if (pais.tags) {
+        <div class="tags-container">
+          @for (tag of pais.tags; track tag) {
+            <span class="tag-pill">{{ tag }}</span>
+          }
+        </div>
+      }
+
+      @if (pais.datosGenerales) {
+        <div class="datos-rapidos-bar">
+          <span class="dato-item">🗓️ Mejor época: <strong>{{ pais.datosGenerales.epoca }}</strong></span>
+          <span class="dato-item">🗣️ Idioma: <strong>{{ pais.datosGenerales.idioma }}</strong></span>
+          <span class="dato-item">💶 Moneda: <strong>{{ pais.datosGenerales.moneda }}</strong></span>
+        </div>
+      }
+
       <div class="carrusel-ciudades">
         @for (ciudad of pais.ciudades; track ciudad.nombre) {
           <div class="ciudad-card" [style.backgroundImage]="'url(' + ciudad.imagenFondo + ')'" (click)="irACiudad(ciudad.nombre)">

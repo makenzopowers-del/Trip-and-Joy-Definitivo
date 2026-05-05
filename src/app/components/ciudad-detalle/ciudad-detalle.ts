@@ -5,8 +5,9 @@ import { PLATFORM_ID } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
 import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Paises } from '../../services/paises';
+import { Pais, Ciudad } from '../../pais.model';
 
 @Component({
   selector: 'app-ciudad-detalle',
@@ -15,15 +16,17 @@ import { Paises } from '../../services/paises';
   templateUrl: './ciudad-detalle.html',
   styleUrl: './ciudad-detalle.css',
 })
+
 export class CiudadDetalle implements OnInit {
-  pais: any;
-  ciudad: any;
+  pais?: Pais;
+  ciudad?: Ciudad;
 
   constructor(
     private route: ActivatedRoute,
     private paisesService: Paises,
+    private router: Router,
     private location: Location,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
   ) {}
 
   ngOnInit() {
@@ -45,6 +48,17 @@ export class CiudadDetalle implements OnInit {
 
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo(0, 0); // Que aparezca arriba del todo
+    }
+  }
+
+  verPacks(tipoPack: string) {
+    // Obtenemos los parámetros actuales de la URL para construir la nueva ruta
+    const paisId = this.route.snapshot.paramMap.get('paisId'); // Ajusta esto si el parámetro en tu ruta se llama distinto
+    const ciudadNombre = this.route.snapshot.paramMap.get('ciudadNombre'); // Ajusta esto también
+
+    if (paisId && ciudadNombre) {
+      // Navegamos a la ruta de packs, pasando el tipo de pack como parte de la URL
+      this.router.navigate(['/pais', paisId, 'ciudad', ciudadNombre.toLowerCase(), tipoPack]);
     }
   }
 

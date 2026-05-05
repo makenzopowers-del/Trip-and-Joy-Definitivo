@@ -17,7 +17,7 @@
         <label for="email">Correo electrónico</label>
         <div class="input-wrapper">
           <span class="icon">✉</span>
-          <input type="email" id="email" placeholder="viajero@ejemplo.com" required>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="viajero@ejemplo.com" required>
         </div>
       </div>
 
@@ -25,14 +25,14 @@
         <label for="password">Contraseña</label>
         <div class="input-wrapper">
           <span class="icon">🔒</span>
-          <input type="password" id="password" placeholder="********" required>
+          <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="********" required>
         </div>
         <div class="forgot-pwd-container">
           <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
         </div>
       </div>
 
-      <button class="btn-primary" (click)="onEntrar()">Entrar</button>
+      <button type="button" class="btn-primary" (click)="onEntrar()">Entrar</button>
 
       <div class="social-divider">
         <span>O</span>

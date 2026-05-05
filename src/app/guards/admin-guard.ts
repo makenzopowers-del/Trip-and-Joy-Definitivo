@@ -4,17 +4,23 @@ import { Auth } from '../services/auth';
 
 
 export const adminGuard: CanActivateFn = (route, state) => {
-
-  const auth = inject(Auth); 
   const router = inject(Router);
 
-  // Le preguntamos a tu servicio si el usuario actual es administrador
-  if (auth.esAdministrador()) {
-    console.log('¡El portero te deja pasar! Eres admin.');
-    return true; // Vía libre
-  } else {
+    // 1. Verificamos que estamos en el entorno del navegador real
+    if (typeof window !== 'undefined' && window.localStorage) {
+      
+      // 2. Comprobamos el rol directamente de forma segura
+      const rol = localStorage.getItem('rol');
+      
+      if (rol === 'admin') {
+        console.log('¡El portero te deja pasar! Eres admin.');
+        return true; // Vía libre
+      }
+    }
+
+    // Si llegamos aquí, es porque no es admin o estamos renderizando en el servidor
     console.log('¡Alto ahí! No eres admin. De vuelta al inicio.');
     router.navigate(['/']); // Lo mandamos a la página de inicio
     return false; // Bloqueamos el paso
-  }
-};
+    
+  };

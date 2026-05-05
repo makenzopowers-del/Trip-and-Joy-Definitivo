@@ -1,6 +1,6 @@
 .valoraciones-page {
   /* Fondo oscuro, similar al header */
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/que-ofrecemos/fondo-europa.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('/valoraciones/fondo-valoraciones.gif') no-repeat center center;
   background-size: cover;
   z-index: 1;
   position: relative;
@@ -108,3 +108,35 @@
     left: 20px; /* Centrar o ajustar la foto en móvil */
   }
 }
+
+.volver-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+ 
+  z-index: 9999; /* Por encima de todas las demás capas */
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  backdrop-filter: blur(8px);           /* Efecto de cristal esmerilado */
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.volver-btn:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  border-color: white;
+}
+
+.volver-btn:active {
+  transform: translateX(-50%) scale(0.95); /* Efecto de pulsación al hacer clic */
+} 

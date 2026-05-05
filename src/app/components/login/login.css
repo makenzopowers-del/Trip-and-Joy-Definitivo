@@ -249,3 +249,13 @@
 .auth-footer a:hover {
   text-decoration: underline;
 }
+
+/*=========================================================
+   RESPONSIVIDAD: EN PANTALLAS PEQUEÑAS, LA TARJETA SE HACE MÁS ESTRECHA Y LOS ELEMENTOS SE AJUSTAN
+   =========================================================*/
+@media (max-width: 480px) {
+  .modal-box.dark-theme {
+    width: 90%; /* La tarjeta ocupa el 90% del ancho de la pantalla */
+    padding: 30px; /* Menos espacio interior para que no se vea tan grande */
+  }
+}

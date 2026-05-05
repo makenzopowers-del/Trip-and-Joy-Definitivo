@@ -1,55 +1,81 @@
-<div class="admin-bg">
-  <div class="admin-container">
+<div class="admin-dashboard-layout">
+  <div class="main-content">
     
-    <header class="admin-header">
-      <h1>Página del Administrador</h1>
-    </header>
+    <header class="dashboard-header">
+      <div class="header-titles">
+        <h1>Resumen General</h1>
+        <p class="subtitle">Bienvenido al panel de control de Trip N' Joy. Aquí tienes las métricas clave.</p>
+      </div>
+      </header>
 
-    <div class="stats-grid">
+    <section class="metrics-grid">
       
-      <div class="stat-card card-yellow">
-        <h2 class="text-cyan">Actividades</h2>
-        <div class="img-wrapper">
-          <img src="assets/actividades-admin.jpg" alt="Actividades">
+      <div class="metric-card accent-activities">
+        <div class="card-content">
+          <div class="metric-info">
+            <span class="metric-label">Actividades</span>
+            <span class="metric-value">{{ totalActividades | number:'1.0-0' }}</span> </div>
+          <div class="metric-icon">
+            <span class="icon-placeholder">🏃‍♂️</span> </div>
         </div>
-        <p>Hay {{ totalActividades }} Actividades Disponibles</p>
+        <p class="metric-status">Hay disponibles para reserva</p>
       </div>
 
-      <div class="stat-card card-green">
-        <h2 class="text-yellow">Usuarios</h2>
-        <div class="img-wrapper">
-          <img src="assets/usuarios-admin.jpg" alt="Usuarios">
+      <div class="metric-card accent-users">
+        <div class="card-content">
+          <div class="metric-info">
+            <span class="metric-label">Usuarios</span>
+            <span class="metric-value">{{ totalUsuarios | number:'1.0-0' }}</span>
+          </div>
+          <div class="metric-icon">
+            <span class="icon-placeholder">👥</span>
+          </div>
         </div>
-        <p>Hay {{ totalUsuarios }} Usuarios Registrados</p>
+        <p class="metric-status">Actualmente registrados</p>
       </div>
 
-      <div class="stat-card card-light-green">
-        <h2 class="text-green">Alojamientos</h2>
-        <div class="img-wrapper">
-          <img src="assets/alojamientos-admin.jpg" alt="Alojamientos">
+      <div class="metric-card accent-lodging">
+        <div class="card-content">
+          <div class="metric-info">
+            <span class="metric-label">Alojamientos</span>
+            <span class="metric-value">{{ totalAlojamientos | number:'1.0-0' }}</span>
+          </div>
+          <div class="metric-icon">
+            <span class="icon-placeholder">🏨</span>
+          </div>
         </div>
-        <p>Hay {{ totalAlojamientos }} Alojamientos Disponibles</p>
+        <p class="metric-status">Disponibles en la plataforma</p>
       </div>
 
-    </div>
+    </section>
 
-    <div class="actions-grid">
-      <button class="action-btn btn-yellow" (click)="irAGestionarActividades()">
-        Gestionar<br>Actividades
-      </button>
-      
-      <button class="action-btn btn-pink-outline">
-        Administrar<br>Usuarios
-      </button>
-      
-      <button class="action-btn btn-green-outline">
-        Gestionar Servicios<br>Primarios
-      </button>
-      
-      <button class="action-btn btn-blue-outline">
-        Gestionar<br>Alojamientos
-      </button>
-    </div>
+    <section class="quick-actions-section">
+      <h2>Acciones de Gestión</h2>
+      <div class="actions-flex">
+        
+        <button class="action-button btn-primary" (click)="irAGestionarActividades()">
+          <span class="btn-icon">➕</span>
+          <span class="btn-text">Gestionar Actividades</span>
+        </button>
+        
+        <button class="action-button btn-outline" (click)="irAAdministrarUsuarios()">
+          <span class="btn-icon">🛠️</span>
+          <span class="btn-text">Administrar Usuarios</span>
+        </button>
+        
+        <button class="action-button btn-outline" (click)="irAServiciosPrimarios()">
+          <span class="btn-icon">💡</span>
+          <span class="btn-text">Servicios Primarios</span>
+        </button>
+        
+        <button class="action-button btn-primary-dark" (click)="irAGestionarAlojamientos()">
+          <span class="btn-icon">🏢</span>
+          <span class="btn-text">Gestionar Alojamientos</span>
+        </button>
+        
+
+      </div>
+    </section>
 
   </div>
 </div>

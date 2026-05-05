@@ -3,7 +3,7 @@
    ========================================================= */
 .ofrecemos-wrapper {
   min-height: 100vh;
-  background: url('/que-ofrecemos/fondo-europa.jpg') no-repeat center center;
+  background: url('/que-ofrecemos/fondo-europa.gif') no-repeat center center;
   background-size: cover;
   position: relative;
   display: flex;

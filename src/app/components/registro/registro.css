@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center; /* Centra el panel horizontalmente */
   align-items: center; /* Centra el panel verticalmente */
-  background: url('/fondo-login.jpg') no-repeat center center; /* Tu imagen de fondo */
+  background: url('/fondo-registro.gif') no-repeat center center; /* Tu imagen de fondo */
   background-size: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
   position: relative; /* Necesario para que la capa negra (::before) se coloque encima */
   padding: 40px 20px; /* Un poco más de margen arriba y abajo porque este formulario es más alto */
@@ -191,4 +191,30 @@
   color: #00597f; 
   text-decoration: none; 
   font-weight: bold; 
+}
+
+/* =========================================================
+   ESTILOS PARA VALIDACIONES DEL FORMULARIO
+   ========================================================= */
+.error-msg {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: block;
+  font-weight: 600;
+}
+
+/* Apariencia del botón cuando el formulario es inválido */
+.btn-disabled {
+  background: #00597f80 !important; /* Azul más apagado/transparente */
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
+
+/* --- Responsive para móviles --- */
+@media (max-width: 900px) {
+  .testimonios-grid {
+    grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    gap: 80px; /* Aumentar el espacio entre tarjetas */
+  }
 }
