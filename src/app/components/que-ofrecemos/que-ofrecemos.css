@@ -3,8 +3,7 @@
    ========================================================= */
 .ofrecemos-wrapper {
   min-height: 100vh;
-  /* CAMBIA ESTO por tu imagen de fondo real */
-  background: url('/fondo-europa.jpg') no-repeat center center;
+  background: url('/que-ofrecemos/fondo-europa.jpg') no-repeat center center;
   background-size: cover;
   position: relative;
   display: flex;
@@ -50,7 +49,7 @@
 
 .text-orange {
   color: #e28e53; /* Color cobre/naranja del logo */
-  font-size: inherit; /* Para que no se haga pequeño como nos pasó antes */
+  font-size: inherit;
 }
 
 /* =========================================================

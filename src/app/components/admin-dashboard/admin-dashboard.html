@@ -1,0 +1,55 @@
+<div class="admin-bg">
+  <div class="admin-container">
+    
+    <header class="admin-header">
+      <h1>Página del Administrador</h1>
+    </header>
+
+    <div class="stats-grid">
+      
+      <div class="stat-card card-yellow">
+        <h2 class="text-cyan">Actividades</h2>
+        <div class="img-wrapper">
+          <img src="assets/actividades-admin.jpg" alt="Actividades">
+        </div>
+        <p>Hay {{ totalActividades }} Actividades Disponibles</p>
+      </div>
+
+      <div class="stat-card card-green">
+        <h2 class="text-yellow">Usuarios</h2>
+        <div class="img-wrapper">
+          <img src="assets/usuarios-admin.jpg" alt="Usuarios">
+        </div>
+        <p>Hay {{ totalUsuarios }} Usuarios Registrados</p>
+      </div>
+
+      <div class="stat-card card-light-green">
+        <h2 class="text-green">Alojamientos</h2>
+        <div class="img-wrapper">
+          <img src="assets/alojamientos-admin.jpg" alt="Alojamientos">
+        </div>
+        <p>Hay {{ totalAlojamientos }} Alojamientos Disponibles</p>
+      </div>
+
+    </div>
+
+    <div class="actions-grid">
+      <button class="action-btn btn-yellow" (click)="irAGestionarActividades()">
+        Gestionar<br>Actividades
+      </button>
+      
+      <button class="action-btn btn-pink-outline">
+        Administrar<br>Usuarios
+      </button>
+      
+      <button class="action-btn btn-green-outline">
+        Gestionar Servicios<br>Primarios
+      </button>
+      
+      <button class="action-btn btn-blue-outline">
+        Gestionar<br>Alojamientos
+      </button>
+    </div>
+
+  </div>
+</div>

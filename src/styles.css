@@ -1,6 +1,9 @@
 /* 1. Importamos exactamente Overlock y Overlock SC desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Overlock+SC&family=Overlock:wght@400;700;900&display=swap');
 
+/* Importamos estilos del cursor */
+@import './cursor.css'; 
+
 /* 2. Reseteo y fuente base para toda la web (Overlock normal) */
 html, body {
   margin: 0;

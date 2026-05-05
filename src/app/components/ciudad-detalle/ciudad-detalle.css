@@ -1,0 +1,128 @@
+/* ==========================================================================
+   CONTENEDOR PRINCIPAL (Fondo de pantalla completo)
+   ========================================================================== */
+.ciudad-bg {
+  min-height: 100vh; /* Ocupa al menos el 100% del alto de tu pantalla */
+  background-size: cover; /* Hace que la imagen de fondo cubra todo sin deformarse */
+  background-position: center; /* Centra la imagen de fondo */
+  background-attachment: fixed; /* Hace que el fondo se quede quieto si haces scroll */
+  
+  /* Usamos Flexbox para centrar el contenido (imagen y panel) en la pantalla */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  position: relative; /* Necesario para poder posicionar el botón "Volver" libremente */
+  padding: 50px 20px; /* Espacio interior para que no pegue en los bordes */
+}
+
+/* ==========================================================================
+   CONTENEDOR CENTRAL (Agrupa la foto y el panel oscuro)
+   ========================================================================== */
+.main-content {
+  display: flex; /* Coloca los elementos en fila (uno al lado del otro) */
+  flex-direction: row; 
+  align-items: center; /* Centra verticalmente la imagen con el panel */
+  justify-content: center;
+  gap: 50px; /* Espacio de separación entre la imagen y el panel oscuro */
+  max-width: 1200px; /* Ancho máximo para que no se estire demasiado en pantallas gigantes */
+  width: 100%;
+  margin-top: 50px; /* Espacio extra por arriba (por si tienes la barra de navegación) */
+}
+
+/* ==========================================================================
+   IMAGEN CUADRADA DE LA CIUDAD (Izquierda)
+   ========================================================================== */
+.img-container img {
+  width: 400px; /* Ancho fijo de la foto */
+  height: 400px; /* Alto fijo (así conseguimos que sea cuadrada) */
+  object-fit: cover; /* Evita que la foto se aplaste o estire, la recorta si es necesario */
+  border-radius: 60px; /* Hace las esquinas muy redondeadas, como en tu diseño */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra negra para darle efecto de profundidad */
+}
+
+/* ==========================================================================
+   PANEL OSCURO DE INFORMACIÓN (Derecha)
+   ========================================================================== */
+.info-panel {
+  background-color: rgba(20, 20, 20, 0.85); /* Color gris muy oscuro con 85% de opacidad (deja ver el fondo) */
+  padding: 50px; /* Espacio interior para que el texto respire */
+  border-radius: 40px; /* Esquinas redondeadas del panel */
+  color: white; /* Color general del texto dentro del panel */
+  max-width: 600px; /* Ancho máximo del panel para que los textos no se hagan infinitos */
+  text-align: center; /* Centra todo el texto y los botones */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Sombra para despegarlo del fondo */
+}
+
+/* Título de la ciudad (Ej: OSLO) */
+.info-panel h1 {
+  font-size: 3.5rem; /* Tamaño de letra gigante */
+  margin-top: 0;
+  margin-bottom: 20px; /* Separación con la descripción */
+  font-weight: normal; /* Le quitamos la negrita extra gruesa por defecto */
+}
+
+/* Texto de descripción de la ciudad */
+.info-panel p {
+  font-size: 1.2rem; /* Tamaño del texto normal */
+  line-height: 1.6; /* Separación entre las líneas del párrafo para leerlo mejor */
+  margin-bottom: 40px; /* Separación con los botones de abajo */
+}
+
+/* ==========================================================================
+   ZONA DE BOTONES
+   ========================================================================== */
+
+/* Agrupa los dos botones turquesas para ponerlos en línea */
+.botones-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre el botón de actividades y el de alojamientos */
+  margin-bottom: 20px; /* Separación con el botón verde de abajo */
+}
+
+/* Estilos compartidos por TODOS los botones */
+button {
+  cursor: pointer; /* Cambia el ratón a una "manita" al pasar por encima */
+  border: none; /* Quita el borde feo que traen los botones por defecto */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.1rem;
+  transition: transform 0.2s; /* Hace que la animación al hacer hover sea suave */
+}
+
+/* Animación: hace que el botón "salte" un poquito al poner el ratón encima */
+button:hover {
+  transform: scale(1.05); /* Lo hace un 5% más grande */
+}
+
+/* Botones Turquesa (Actividades y Alojamientos) */
+.btn-cyan {
+  background-color: #38c8c8; /* Color turquesa de tu diseño */
+  color: #1a3c5a; /* Color azul oscuro/marino para el texto */
+  padding: 15px 30px; /* Tamaño del botón (arriba/abajo, izquierda/derecha) */
+  border-radius: 15px; /* Bordes ligeramente redondeados */
+  line-height: 1.2; /* Junta un poco más las líneas si hay texto en dos renglones */
+}
+
+/* Botón Verde (Packs conjuntos) */
+.btn-green {
+  background-color: #a8d13b; /* Color verde lima de tu diseño */
+  color: #1a3c5a; /* Color azul oscuro/marino para el texto */
+  padding: 15px 40px; /* Un poco más ancho que los turquesas */
+  border-radius: 15px;
+  line-height: 1.2;
+}
+
+/* Botón Volver (Esquina inferior izquierda) */
+.btn-volver {
+  position: absolute; /* Lo sacamos del flujo normal para ponerlo donde queramos */
+  bottom: 50px; /* Lo pegamos a 50px del borde inferior de la pantalla */
+  left: 50px; /* Lo pegamos a 50px del borde izquierdo de la pantalla */
+  
+  background-color: #0b2245; /* Azul muy oscuro */
+  color: white; /* Texto blanco */
+  padding: 15px 40px;
+  border-radius: 20px; /* Más redondeado que los botones de packs */
+  font-size: 1.2rem;
+}

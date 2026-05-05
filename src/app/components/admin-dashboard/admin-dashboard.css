@@ -1,0 +1,115 @@
+/* Fondo general (puedes poner aquí la imagen de la ciudad difuminada si la tienes) */
+.admin-bg {
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Color de fallback */
+  /* background-image: url('assets/tu-fondo-admin.jpg'); */
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor principal que agrupa todo */
+.admin-container {
+  max-width: 1200px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo semitransparente detrás del panel */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Barra superior azul oscura */
+.admin-header {
+  background-color: #2b3a4a;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+/* Cuadrícula para las 3 tarjetas */
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+}
+
+/* Estilos base de las tarjetas */
+.stat-card {
+  width: 300px;
+  border-radius: 40px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Colores de fondo de las tarjetas según tu diseño */
+.card-yellow { background-color: #fceea7; }
+.card-green { background-color: #9ac992; }
+.card-light-green { background-color: #e5f1b6; }
+
+/* Colores de los títulos de las tarjetas */
+.text-cyan { color: #2e9fbd; margin-top: 0; font-size: 1.8rem;}
+.text-yellow { color: #e5b922; margin-top: 0; font-size: 1.8rem;}
+.text-green { color: #35a83a; margin-top: 0; font-size: 1.8rem;}
+
+/* Contenedor de las imágenes dentro de las tarjetas */
+.img-wrapper {
+  width: 100%;
+  height: 150px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Texto de "Hay X disponibles..." */
+.stat-card p {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+/* Cuadrícula para los 4 botones de abajo */
+.actions-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 40px 40px 40px;
+}
+
+/* Estilo base de los botones inferiores */
+.action-btn {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  background-color: #fceea7; /* Fondo por defecto */
+  color: black;
+  border: 3px solid transparent;
+  transition: transform 0.2s;
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Bordes de colores específicos de tu diseño para los botones */
+.btn-yellow { border-color: #fceea7; }
+.btn-pink-outline { border-color: #ef7b7b; }
+.btn-green-outline { border-color: #8cc63f; }
+.btn-blue-outline { border-color: #4a8cdb; }

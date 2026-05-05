@@ -1,0 +1,131 @@
+/* Contenedor principal con fondo a pantalla completa y capa oscura */
+.pais-container {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: sans-serif; /* Ajusta según tu fuente principal */
+}
+
+/* Capa de superposición para oscurecer el fondo */
+.content-overlay {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+/* Icono de información en la esquina superior derecha */
+.info-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.info-btn:hover {
+  background-color: #161616;
+}
+
+/* Panel de título central de forma trapezoidal y muy redondeado */
+.panel-titulo {
+  background-color: #1a2333; /* Azul oscuro */
+  border: 4px solid #fff;
+  border-radius: 50px; /* Bordes muy redondeados */
+  padding: 20px 80px;
+  margin-bottom: 50px;
+  transform: translateY(-20%); /* Ligeramente elevado */
+}
+
+.titulo-pais {
+  color: #fff;
+  font-size: 56px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+/* Carrusel de ciudades */
+.carrusel-ciudades {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+}
+
+/* Tarjetas de ciudades muy redondeadas con imagen de fondo */
+.ciudad-card {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  background-color: #d2cdc9; /* Color de fondo gris claro/marrón */
+  border: 4px solid #fff;
+  border-radius: 50px; /* Bordes muy redondeados */
+  height: 250px;
+  overflow: hidden; /* Para que el contenido no se salga de los bordes redondeados */
+  position: relative;
+}
+
+.ciudad-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.ciudad-card:hover .ciudad-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.titulo-ciudad {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para mayor legibilidad */
+}
+
+/* Botón 'Volver' en la esquina inferior izquierda */
+.volver-btn {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  background-color: #1a2333; /* Azul oscuro */
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 30px; /* Bordes muy redondeados */
+  padding: 12px 35px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.volver-btn:hover {
+  background-color: #0d131f;
+}

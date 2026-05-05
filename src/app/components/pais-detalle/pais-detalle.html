@@ -1,0 +1,29 @@
+@if (pais) {
+  <div class="pais-container" [style.backgroundImage]="'url(' + pais.imagenFondo + ')'">
+    <div class="content-overlay">
+
+      <button class="info-btn">
+        <span class="info-icon">i</span>
+      </button>
+
+      <div class="panel-titulo">
+        <h1 class="titulo-pais">{{ pais.nombre }}</h1>
+      </div>
+
+      <div class="carrusel-ciudades">
+        @for (ciudad of pais.ciudades; track ciudad.nombre) {
+          <div class="ciudad-card" [style.backgroundImage]="'url(' + ciudad.imagenFondo + ')'" (click)="irACiudad(ciudad.nombre)">
+            <div class="ciudad-overlay">
+              <h2 class="titulo-ciudad">{{ ciudad.nombre }}</h2>
+            </div>
+          </div>
+        }
+      </div>
+
+      <button class="volver-btn" (click)="volver()">
+        Volver
+      </button>
+
+    </div>
+  </div>
+}

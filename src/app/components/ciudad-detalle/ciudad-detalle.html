@@ -1,0 +1,25 @@
+<div class="ciudad-bg" *ngIf="ciudad" [style.backgroundImage]="'url(' + pais.imagenFondo + ')'">
+  
+  <div class="main-content">
+    
+    <div class="img-container">
+      <img [src]="ciudad.imagenDetalle" [alt]="ciudad.nombre">
+    </div>
+
+    <div class="info-panel">
+      <h1>{{ ciudad.nombre }}</h1>
+      <p>{{ ciudad.descripcion }}</p>
+
+      <div class="botones-grid">
+        <button class="btn-cyan">Packs de<br>actividades</button>
+        <button class="btn-cyan">Packs de<br>alojamientos</button>
+      </div>
+      <div class="boton-centrado">
+        <button class="btn-green">Ver Packs<br>conjuntos</button>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="btn-volver" (click)="volver()">Volver</button>
+</div>

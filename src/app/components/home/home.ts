@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -9,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class Home {
 
+  constructor(private modalService: ModalService) {}
+
+  onVClick() {
+    this.modalService.abrirPlanViaje.emit(); // Avisa de que se ha hecho clic
+  }
 }

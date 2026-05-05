@@ -7,3 +7,7 @@
 @if (isLoginVisible) {
   <app-login (cerrarLogin)="isLoginVisible = false"></app-login>
 }
+
+@if (isPlanViajeVisible) {
+  <app-plan-viaje-1 (cerrar)="isPlanViajeVisible = false"></app-plan-viaje-1>
+}

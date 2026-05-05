@@ -89,7 +89,7 @@
 }
 
 .join-btn:hover {
-  background-color: #ffffff; /* Al pasar el ratón, el fondo se vuelve blanco */
+  background-color: #ffcf75; /* Al pasar el ratón, el fondo se vuelve naranja */
   color: #2b3a4a; /* El texto se vuelve del color oscuro de tu barra (ajústalo si es necesario) */
   transform: translateY(-2px); /* Se levanta un poquito hacia arriba */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar efecto de profundidad */
