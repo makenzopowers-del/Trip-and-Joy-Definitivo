@@ -13,3 +13,12 @@
 }
 
 <app-que-ofrecemos (abrirLoginModal)="isLoginVisible = true"></app-que-ofrecemos>
+<app-que-ofrecemos (abrirRegistroModal)="isRegistroVisible = true"></app-que-ofrecemos>
+
+@if (isLoginVisible) {
+  <app-login />
+}
+
+@if (isRegistroVisible) {
+  <app-registro />
+}
