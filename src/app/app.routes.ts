@@ -30,6 +30,8 @@ export const routes: Routes = [
     { path: 'valoraciones', component: Valoraciones }, // Página de valoraciones
     { path: 'pais/:nombre', component: PaisDetalle }, // Página de detalle de país
     { path: 'pais/:paisId/ciudad/:ciudadNombre', component: CiudadDetalle }, // Página de detalle de ciudad
+    { path: 'login', component: Login}, // Página de login (modal)
+    { path: 'registro', component: Registro}, // Página de registro
     
     // --- RUTAS DEL ADMIN ---
     { path: 'admin', component: AdminDashboard, canActivate: [adminGuard] }, // Panel de control del admin (con guardia)
