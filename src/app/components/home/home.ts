@@ -1,18 +1,39 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ModalService } from '../../services/modal.service';
 import { Auth } from '../../services/auth';
 import { Router } from '@angular/router';
+import { Login } from '../login/login';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, Login],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
 export class Home {
 
-  constructor(private modalService: ModalService, public auth: Auth, private router: Router ) {}
+  isLoginVisible = false;
+
+  constructor(private modalService: ModalService, public auth: Auth, private router: Router ) {
+    // Suscribimos aquí por si ngOnInit no se está llamando
+    this.modalService.abrirLogin.subscribe(() => {
+      this.isLoginVisible = true;
+      console.log('Home: abrir login');
+    });
+  }
+
+   ngOnInit() {
+    // Cuando otro componente pida abrir el login → se muestra
+    this.modalService.abrirLogin.subscribe(() => {
+      this.isLoginVisible = true;
+    });
+  }
+
+  cerrarLoginModal() {
+    this.isLoginVisible = false;
+  }
 
   onVClick() {
     if (this.auth.isLoggedIn()) {

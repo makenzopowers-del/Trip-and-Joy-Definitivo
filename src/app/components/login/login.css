@@ -1,37 +1,36 @@
 /* =========================================================
    CONTENEDOR PRINCIPAL (LA SÁBANA OSCURA)
    ========================================================= */
-/* Esto crea el fondo negro semitransparente que ocupa toda la pantalla */
 .modal-overlay {
-  position: fixed; /* Fijo en la pantalla aunque hagas scroll */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* 100% del ancho de la ventana */
-  height: 100vh; /* 100% del alto de la ventana */
-  background-color: rgba(0, 0, 0, 0.6); /* Negro con 60% de opacidad */
-  backdrop-filter: blur(5px); /* Efecto cristal: desenfoca lo que hay detrás */
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
   display: flex;
-  justify-content: center; /* Centra la tarjeta horizontalmente */
-  align-items: center; /* Centra la tarjeta verticalmente */
-  z-index: 9999; /* Asegura que se ponga por encima de todo el header y el resto de la web */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 /* =========================================================
-   TARJETA DEL LOGIN (TEMA OSCURO PROTOTIPO)
+   TARJETA DEL LOGIN
    ========================================================= */
 .modal-box.dark-theme {
-  position: relative; /* Necesario para que la "X" se posicione de forma absoluta dentro de esta caja */
-  background-color: #ffffff; /* Color azul marino/negro de fondo */
-  border-radius: 20px; /* Bordes redondeados */
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 20px;
   width: 100%;
-  max-width: 450px; /* Ancho máximo para que no se estire en pantallas grandes */
-  padding: 40px; /* Espacio interior */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); /* Sombra difuminada para dar volumen */
-  color: rgb(0, 0, 0); /* Texto principal en blanco */
+  max-width: 450px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  color: rgb(0, 0, 0);
   font-family: Arial, sans-serif;
 }
 
-/* Botón de cerrar (X) en la esquina superior izquierda */
+/* Botón cerrar */
 .close-btn {
   position: absolute;
   top: 15px;
@@ -39,21 +38,21 @@
   background: none;
   border: none;
   font-size: 20px;
-  cursor: pointer; /* Cambia el ratón a la manita al pasar por encima */
+  cursor: pointer;
   color: #000000;
-  transition: color 0.2s; /* Animación suave al cambiar de color */
+  transition: color 0.2s;
 }
 
 .close-btn:hover {
-  color: rgb(255, 111, 111); /* Se ilumina al pasar el ratón */
+  color: rgb(255, 111, 111);
 }
 
 /* =========================================================
-   CABECERA (LOGO, TÍTULO Y SUBTÍTULO)
+   CABECERA
    ========================================================= */
 .auth-header {
   text-align: center;
-  margin-bottom: 30px; /* Separación con el formulario */
+  margin-bottom: 30px;
 }
 
 .auth-logo {
@@ -62,31 +61,29 @@
   margin-bottom: 15px;
 }
 
-/* Color azul celeste del prototipo */
 .auth-title {
-  color: #003f5a; 
+  color: #003f5a;
   font-size: 24px;
   margin: 0 0 5px 0;
   font-weight: 800;
 }
 
 .auth-subtitle {
-  color: #00597f; /* Gris clarito */
+  color: #00597f;
   font-size: 13px;
   margin: 0;
   font-weight: 700;
 }
 
 /* =========================================================
-   FORMULARIO E INPUTS
+   FORMULARIO
    ========================================================= */
 .auth-form {
   display: flex;
-  flex-direction: column; /* Coloca los elementos uno debajo de otro */
-  gap: 15px; /* Espacio uniforme entre los campos del formulario */
+  flex-direction: column;
+  gap: 15px;
 }
 
-/* Etiquetas de los inputs (Correo electrónico, Contraseña) */
 .input-group label {
   display: block;
   font-weight: 800;
@@ -95,41 +92,36 @@
   color: #00597f;
 }
 
-/* Caja que envuelve el icono y el campo de texto */
 .input-wrapper {
   display: flex;
   align-items: center;
-  background-color: #ffffff; /* Fondo del input un poco más claro que la tarjeta */
-  border: 1px solid #a5a5a5; /* Borde gris muy oscuro */
+  background-color: #ffffff;
+  border: 1px solid #a5a5a5;
   border-radius: 8px;
   padding: 0 12px;
-  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.); /* Sombra difuminada para dar volumen */
 }
 
-/* Iconos de los inputs (sobre, candado) */
 .input-wrapper .icon {
   color: #888;
   font-size: 16px;
 }
 
-/* El campo de texto en sí */
 .input-wrapper input {
-  flex: 1; /* Ocupa todo el espacio restante de la caja */
-  background: transparent; /* Fondo transparente para que se vea el de la caja wrapper */
+  flex: 1;
+  background: transparent;
   border: none;
   color: rgb(0, 0, 0);
   padding: 12px;
   font-size: 14px;
-  outline: none; /* Quita el borde azul que ponen los navegadores al hacer clic */
+  outline: none;
 }
 
-/* El texto de ejemplo dentro del input */
 .input-wrapper input::placeholder {
   color: #666;
 }
 
 /* =========================================================
-   ENLACES Y BOTÓN PRINCIPAL
+   ENTRAR + OLVIDASTE CONTRASEÑA
    ========================================================= */
 .forgot-pwd-container {
   text-align: right;
@@ -140,16 +132,15 @@
   color: #003f5a;
   font-size: 12px;
   font-weight: bold;
-  text-decoration: none; /* Quita el subrayado por defecto */
+  text-decoration: none;
 }
 
 .forgot-password:hover {
-  text-decoration: underline; /* Lo subraya solo al pasar el ratón */
+  text-decoration: underline;
 }
 
-/* Botón azul central "Entrar" */
 .btn-primary {
-  background-color: #00597f; 
+  background-color: #00597f;
   color: #f1f1f1;
   border: none;
   padding: 14px;
@@ -157,20 +148,18 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  margin-top: px;
-  transition: background-color 0.2s; /* Animación de 0.2 segundos */
-  box-shadow: 0 4px 11px rgba(1, 0.8, 0, 0.5); /* Sombra difuminada para dar volumen */
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 11px rgba(1, 0.8, 0, 0.5);
 }
 
 .btn-primary:hover {
-  background-color: #cbc9d6; /* Un tono un poco más oscuro al pasar el ratón */
-  color: black
+  background-color: #cbc9d6;
+  color: black;
 }
 
 /* =========================================================
-   ZONA SOCIAL (BOTONES DE GOOGLE Y APPLE)
+   DIVISOR SOCIAL (SE MANTIENE)
    ========================================================= */
-/* La línea divisoria con la letra "O" en medio */
 .social-divider {
   text-align: center;
   position: relative;
@@ -184,54 +173,32 @@
   left: 0;
   right: 0;
   height: 1px;
-  background-color: #d9d9d9; /* Línea gris oscura */
+  background-color: #d9d9d9;
   z-index: 1;
 }
 
 .social-divider span {
-  background-color: white; /* Mismo fondo que la tarjeta para tapar la línea */
+  background-color: white;
   padding: 0 10px;
   color: #666;
   font-size: 12px;
   position: relative;
-  z-index: 2; /* Para que la letra se ponga por encima de la línea */
-}
-
-.social-login {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* Botones blancos de Google y Apple */
-.btn-social {
-  background-color: white;
-  color: #333; /* Texto oscuro */
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 4px 11px rgba(1, 0.8, 0, 0.5); /* Sombra difuminada para dar volumen */
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centra el icono y el texto */
-  gap: 10px; /* Separación entre el logo y el texto */
-  transition: background-color 0.2s;
-}
-
-.btn-social:hover {
-  background-color: #cbc9d6; /* Se oscurece un pelín al pasar el ratón */
-}
-
-.social-icon {
-  width: 18px;
-  height: 18px;
+  z-index: 2;
 }
 
 /* =========================================================
-   FOOTER DEL LOGIN (REGÍSTRATE AQUÍ)
+   GOOGLE IDENTITY SERVICES BUTTON
+   ========================================================= */
+#googleBtn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 40px; /* Asegura que el botón tenga espacio */
+}
+
+
+/* =========================================================
+   FOOTER
    ========================================================= */
 .auth-footer {
   text-align: center;
@@ -250,12 +217,12 @@
   text-decoration: underline;
 }
 
-/*=========================================================
-   RESPONSIVIDAD: EN PANTALLAS PEQUEÑAS, LA TARJETA SE HACE MÁS ESTRECHA Y LOS ELEMENTOS SE AJUSTAN
-   =========================================================*/
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 @media (max-width: 480px) {
   .modal-box.dark-theme {
-    width: 90%; /* La tarjeta ocupa el 90% del ancho de la pantalla */
-    padding: 30px; /* Menos espacio interior para que no se vea tan grande */
+    width: 90%;
+    padding: 30px;
   }
 }

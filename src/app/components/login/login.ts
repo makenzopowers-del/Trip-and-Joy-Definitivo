@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Auth } from '../../services/auth';
 
+declare const google: any;
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -15,7 +17,8 @@ import { Auth } from '../../services/auth';
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
-export class Login {
+export class Login implements OnInit, AfterViewInit {
+
   // Creamos el emisor para avisar de que queremos cerrar
   @Output() cerrarLogin = new EventEmitter<void>();
 
@@ -25,12 +28,38 @@ export class Login {
 
   constructor(private router: Router, private authService: Auth) {}
 
-  //Función para el enlace "Registrate aquí"
-  onCerrarClick() {
-    this.cerrarLogin.emit(); // Disparamos el evento hacia el padre
+  // Inicializamos Google Identity Services al cargar el componente
+  ngOnInit() {
+    google.accounts.id.initialize({
+      client_id: "TU_CLIENT_ID_DE_GOOGLE",
+      callback: (response: any) => this.handleGoogleResponse(response)
+    });
   }
 
-  //Función para el enlace "Entrar"
+  // Renderizamos el botón cuando la vista ya está cargada
+  ngAfterViewInit() {
+    google.accounts.id.renderButton(
+      document.getElementById("googleBtn"),
+      { theme: "outline", size: "large", width: "100%" }
+    );
+  }
+
+  handleGoogleResponse(response: any) {
+    console.log("Token JWT de Google:", response.credential);
+
+    // Aquí decides qué hacer con el token:
+    // - Enviarlo a tu backend Laravel
+    // - Guardarlo en localStorage
+    // - Obtener datos del usuario desde Google
+  }
+
+  //Función para el botón de cerrar
+  onCerrarClick() {
+  console.log('Login: click cerrar');
+  this.cerrarLogin.emit(); // Emitimos el evento para avisar a Home que queremos cerrar el modal
+}
+
+  //Función para el botón "Entrar"
   onEntrar() {
     // Si los campos están vacíos, no hacemos nada
     if (!this.email || !this.password) {
@@ -59,8 +88,7 @@ export class Login {
         // Cerramos el modal
         this.cerrarLogin.emit();
 
-        // 3. REDIRIGIMOS (Ojo aquí: asegúrate de usar '/admin' y no '/admin-dashboard' 
-        // si en tu app.routes.ts lo dejaste como 'admin')
+        // 3. REDIRIGIMOS
         if (rol === 'admin') {
           console.log('Navegando a dashboard de admin...');
           this.router.navigate(['/admin']); 

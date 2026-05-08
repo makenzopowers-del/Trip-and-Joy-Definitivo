@@ -210,6 +210,25 @@
   flex-grow: 1; /* Empuja el botón hacia abajo para que todos queden alineados */
 }
 
+/* Asegura que el contenido esté por encima del overlay */
+.service-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* IMÁGENES DE FONDO */
+.bg-alojamientos {
+  background-image: url('/public/home/alojamientos.jpg');
+}
+
+.bg-actividades {
+  background-image: url('/public/home/actividades.jpg');
+}
+
+.bg-transporte {
+  background-image: url('/public/home/transporte.jpg');
+}
+
 /* Botón "Ver Detalles" (Incentiva al click) */
 .btn-detalles {
   background: transparent;

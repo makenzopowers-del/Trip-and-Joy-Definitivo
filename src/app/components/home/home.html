@@ -11,6 +11,10 @@
   <div class="flecha-v" (click)="onVClick()" style="cursor: pointer;">v</div>
 </section>
 
+@if (isLoginVisible) {
+  <app-login (cerrarLogin)="cerrarLoginModal()"></app-login>
+}
+
 @if (!auth.isLoggedIn()) {
 
   <section id="servicios" class="servicios-section">
@@ -20,21 +24,21 @@
     </div>
     
     <div class="cards-grid">
-      <div class="service-card">
+      <div class="service-card bg-alojamientos">
         <div class="card-icon">🏨</div>
         <h3>Alojamientos</h3>
         <p>Desde hoteles boutique en el centro hasta cabañas perdidas en la montaña.</p>
         <button class="btn-detalles" (click)="verDetalles('/alojamientos')">Ver alojamientos</button>
       </div>
 
-      <div class="service-card">
+      <div class="service-card bg-actividades">
         <div class="card-icon">🏄‍♂️</div>
         <h3>Actividades</h3>
         <p>Excursiones guiadas, deportes extremos y experiencias culturales únicas.</p>
         <button class="btn-detalles" (click)="verDetalles('/actividades')">Explorar actividades</button>
       </div>
 
-      <div class="service-card">
+      <div class="service-card bg-transporte">
         <div class="card-icon">✈️</div>
         <h3>Transporte</h3>
         <p>Vuelos, alquiler de coches y traslados privados desde el aeropuerto.</p>
